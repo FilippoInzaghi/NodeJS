@@ -1,0 +1,1 @@
+alert("Dane z code.js");

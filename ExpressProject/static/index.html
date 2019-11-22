@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body> 
+    <form action="">
+        <label for="name">Name</label>
+        <input type="text" id="name">
+        <label for="surname">Surame</label>
+        <input type="text" id="surname"> 
+        <br>
+        <button type='submit'>Generate a reference</button>
+    </form>
+    <a href="" style="font-size: 32px; color: red; font-weight: bold;">Jestem odnośnikiem</a>
+    <script>
+        const nameInput = document.getElementById('name');
+        const surnameInput = document.getElementById('surname');
+        const form = document.querySelector('form');
+        const a = document.querySelector('a');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = nameInput.value;
+            const surname = surnameInput.value;
+
+            const params = new URLSearchParams({
+                name,
+                surname
+            });
+
+            const url = `http://localhost:3002/?` + params;
+
+            a.setAttribute('href', url)
+        })
+
+       
+        
+    </script>
+</body>
+</html>
